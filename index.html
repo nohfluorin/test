@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛도리</title>
+</head>
+<style>
+    #foods {
+            width: 500px; /* 음식 입력란의 너비를 300px로 조정 */
+            height: 60px;
+    }
+
+    .food {
+        text-align: center;
+    }
+    
+    .container {
+            display: flex; /* Flexbox를 사용하여 자식 요소들을 가로로 나열 */
+            justify-content: space-between; /* 자식 요소들 사이에 균등한 간격을 줌 */
+            flex-wrap: wrap; /* 자식 요소들이 넘칠 경우 다음 줄로 이동 */
+        }
+
+        .card {
+            flex: 1; /* 자식 요소들이 동일한 크기를 가지도록 설정 */
+            margin: 10px; /* 카드들 사이의 간격을 줌 */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 카드에 그림자 효과를 줌 */
+            transition: 0.3s; /* 호버 효과를 위한 부드러운 전환 */
+            border-radius: 5px; /* 모서리를 둥글게 만듦 */
+        }
+
+        .card img {
+            border-top-left-radius: 5px; /* 카드와 동일한 모서리 반경 적용 */
+            border-top-right-radius: 5px; /* 카드와 동일한 모서리 반경 적용 */
+        }
+
+        .card h2, .card h3, .card p {
+            margin: 5px; /* 텍스트 요소들 사이의 간격을 줌 */
+        }
+
+</style>
+<body>
+
+    <link rel="stylesheet" href="index_css.css">
+
+    <header>
+        <h1>🍔 맛도리 🍝</h1>
+        <p>맛있는 곳과 분위기 좋은 곳을 소개합니다.</p>
+    </header>
+    <nav>
+        <a href="#home">홈</a>
+        <a href="#popular">인기 맛집</a>
+        <a href="#new">신규 맛집</a>
+        <a href="#cafe">카페</a>
+        <a href="localfood.html">지역 별 맛집</a>
+        <a href="#contact">문의하기</a>
+
+    </nav>
+
+    <div class="login">
+        <a href="login.html">로그인</a>
+        <a href="join.html">회원가입</a>
+    </div>
+
+<!-- ---------------------------------------------------------------------------------     -->
+    <div class = food>
+    <h1>오늘은 뭐먹지 🤔</h1>
+    <form id="inputForm" onsubmit="return false;">
+        <label for="foods">지금 생각나는 음식은..... </label>
+        <br>
+        <br>
+        <input type="text" id="foods" name="foods"><br><br>
+        <button type="button" onclick="pickRandomFood()">✅✅✅✅</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function pickRandomFood() {
+            const inputField = document.getElementById('foods');
+            const foods = inputField.value;
+
+            // 입력된 문자열을 쉼표로 구분하여 음식 목록을 분리
+            const foodList = foods.split(',');
+
+            // 랜덤한 위치의 음식을 선택
+            const randomIndex = Math.floor(Math.random() * foodList.length);
+            const randomFood = foodList[randomIndex].trim(); // 공백 제거
+
+            // 결과 표시
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `오늘은 ${randomFood} ❗❕`;
+        }
+    </script>
+    </div>
+
+<!-- --------------------------------------------------------------------------------- -->
+
+    <br>
+    <br>
+    <br>
+
+    <h1>❗ 오늘의 추천 ❗</h1>
+
+    <div class="container">
+        <div class="card">
+            <img id src="images/미세노센세.jpg" width="350" height="250" alt="">
+            <h2>미세노센세 🥘</h2>
+            <h2>⭐ 4.5</h2>
+            <p>탄방동</p>
+            <p>인기메뉴</p>
+            <p>카레 <br> 반숙계란후라이 토핑</p>
+        </div>
+        <div class="card">
+            <img src="images/치폴레.jpg" width="350" height="250" alt="">
+            <h3>투웨이버거 치폴레 🍔</h3>
+            <h2>⭐ 4.5</h2>
+            <p>용문동</p>
+            <p>인기메뉴</p>
+            <p>치폴레 더블더블 <br> 치폴레 베이컨 치즈</p>
+        </div>
+        <div class="card">
+            <img id src="images/동방커피.jpg" width="350" height="250" alt="">
+            <h3>동방커피 ☕</h3>
+            <h2>⭐ 4.7</h2>
+            <p>용문동</p>
+            <p>인기메뉴</p>
+            <p>아인슈페너 <br> 바스크치즈케이크</p>
+        </div>
+    </div>
+
+<br>
+<br>
+<!-- --------------------------------------------------------------------------------- -->
+<br>
+<br>
+
+    <h1>🥐 최신 트렌드 테마 🍜🍴</h1>
+    
+    <div class="container">
+        <div class="card">
+            <img src="images/원주율.jpg" width="250" height="250">
+            <h3>🍨 완전 디저트 맛집 🥨</h3>
+            <h3>BEST 5</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/스프링.jpg" alt="" width="250" height="250">
+            <h3>🌮 이국적인 느낌 가득 ! </h3>
+            <h3>대전 타코 맛집 5</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/버기즈.jpg" alt="" width="250" height="250">
+            <h3>🍟 육즙 가득 ~ 🍔</h3>
+            <h3>대전 수제버거 맛집 5</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/헤이.jpg" alt="" width="250" height="250">
+            <h3>분위기 깡패 양식 🍴</h3>
+            <h3>대전 양식 맛집 5</h3>
+        </div>
+    </div>
+
+<br>
+<br>
+<!-- --------------------------------------------------------------------------------- -->
+<br>
+<br>
+
+
+</body>
+
+</html>

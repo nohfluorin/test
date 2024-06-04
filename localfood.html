@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역 별 맛집</title>
+</head>
+<style>
+    header {
+        background-color: #ffdfda;
+        color: rgb(0, 0, 0);
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 40px; /* Adjust for fixed nav */
+    }
+
+    nav {
+        background-color: #333;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+    }   
+
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #search {
+        text-align: center;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>🍔 맛도리 🍝</h1>
+        <p>맛있는 곳과 분위기 좋은 곳을 소개합니다.</p>
+    </header>
+
+    <nav>
+        <a href="#home">홈</a>
+        <a href="#popular">인기 맛집</a>
+        <a href="#new">신규 맛집</a>
+        <a href="#cafe">카페</a>
+        <a href="localfood.html">지역 별 맛집</a>
+        <a href="#contact">문의하기</a>
+    </nav>
+
+    <p id="search">현재 보고 있는 맛집 지역은 <input type="text">입니다.</p>
+</body>
+</html>
